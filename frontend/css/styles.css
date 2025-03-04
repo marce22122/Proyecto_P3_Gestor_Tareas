@@ -1,0 +1,138 @@
+body {
+    font-family: 'Lora', serif;
+    transition: background-color 0.3s, color 0.3s;
+    background-image: url('/icons/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+html.light {
+    --background-color: #ffffff;
+    --primary-bg-color: #ffffff;
+    --card-bg-color: #ffffff85;
+}
+
+html.dark {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --primary-bg-color: #ffffff;
+    --card-bg-color: #33333382;
+}
+
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.bg-primary {
+    background-color: #0d6dfd7e !important;
+}
+
+.bg-light {
+    background-color: var(--primary-bg-color) !important;
+}
+
+.dark-mode-card {
+    background-color: var(--card-bg-color) !important;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+}
+
+.nav-link.active {
+    color: var(--primary-bg-color) !important;
+}
+
+.btn-primary {
+    background-color: #0d6dfd7e;
+    border-color: #0d6dfd7e
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.custom-text-color {
+    color: var(--text-color) !important;
+}
+
+
+nav .nav-link {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav .nav-link:hover {
+    background-color: #0d6dfd;
+}
+
+nav .nav-link .bi {
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+#logoutBtn {
+    font-size: 1.2rem;
+    margin-top: auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+
+}
+
+.table {
+    border-spacing: 0 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background-color: #0d6dfd7e;
+    color: white;
+    text-align: center;
+    border: none;
+}
+
+.table tbody tr {
+    background-color: #ffffff85;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.table tbody tr:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+    text-align: center;
+    border: none;
+}
+
+.table .btn {
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.table .btn:hover {
+    filter: brightness(0.9);
+}
+
+input:disabled,
+select:disabled,
+textarea:disabled {
+    background-color: #b0b0b0 !important;
+    color: #555555 !important;
+    border: 1px solid #999999 !important;
+    cursor: not-allowed;
+    opacity: 1;
+}

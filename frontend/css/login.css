@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lora', serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.card {
+    background: rgba(52, 152, 219, 0.214);
+    border-radius: 12px;
+    padding: 3rem;
+    width: 400px;
+    z-index: 2;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ecf0f1;
+    letter-spacing: 2px;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group-text {
+    background-color: #2980b9;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+.form-control {
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem;
+    background-color: rgba(236, 240, 241, 0.7);
+    color: #2c3e50;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: #2980b9;
+    box-shadow: 0 0 10px rgba(41, 128, 185, 0.7);
+}
+
+#submitBtn {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#submitBtn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+#loadingSpinner {
+    margin-left: 10px;
+}
+
+#errorMessage {
+    font-size: 14px;
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+    }
+}
+
+.card {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    background: linear-gradient(135deg, #4a90e2, #9013fe, #ff6a00);
+    background-size: 300% 300%;
+    animation: gradientMove 10s infinite;
+}

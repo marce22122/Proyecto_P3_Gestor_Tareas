@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración - Gestor de Tareas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid d-flex vh-100">
+        <aside class="text-white p-3 col-2 d-flex flex-column vh-100"
+            style="background-color: rgba(33, 37, 41, 0.541); margin-left: 0;">
+            <h2 class="text-center"
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <img src="icons/administracion.png" alt="icono" style="width: 80px; height: 80px; margin-bottom: 10px;">
+                Administrador
+            </h2>
+            <nav class="nav flex-column mb-auto">
+                <a class="nav-link text-white active" href="dashboard.html">🏠 Inicio</a>
+                <a class="nav-link text-white" href="task.html">📋 Tareas</a>
+                <a class="nav-link text-white" href="user.html">👤 Usuarios</a>
+                <a class="nav-link text-white" href="settings.html">⚙ Configuración</a>
+            </nav>
+            <button id="logoutBtn" class="btn btn-danger mt-auto">🚪 Cerrar Sesión</button>
+        </aside>
+
+        <main class="col-10 p-4 overflow-auto">
+            <header class="p-3 rounded shadow mb-4 bg-primary text-white">
+                <h1>Configuración</h1>
+                <p>Gestiona las preferencias de la aplicación y tu perfil</p>
+            </header>
+
+            <div class="mb-4 border p-4 rounded bg-light dark-mode-card">
+                <h2>👤 Perfil del Administrador</h2>
+                <form id="profileForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input type="text" id="name" class="form-control" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Rol</label>
+                        <input type="text" id="role" class="form-control" disabled>
+                    </div>
+                </form>
+            </div>
+
+            <div class="mb-4 border p-4 rounded bg-light dark-mode-card">
+                <h2>🖥️ Preferencias de la Aplicación</h2>
+                <div class="mb-3">
+                    <label for="theme" class="form-label">Tema</label>
+                    <select id="theme" class="form-select">
+                        <option value="light">Claro</option>
+                        <option value="dark">Oscuro</option>
+                    </select>
+                </div>
+                <button id="saveTheme" class="btn btn-success">Guardar Preferencias</button>
+            </div>
+
+            <div class="border p-4 rounded bg-light dark-mode-card">
+                <h2>ℹ️ Sobre la Aplicación</h2>
+                <p><strong>Versión:</strong> 1.0</p>
+                <p><strong>Contacto:</strong> soporte@.com</p>
+                <p><strong>Teléfono:</strong> +54 222222222</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/js/config.js"></script>
+
+    <script>
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            document.documentElement.classList.add(savedTheme);
+        }
+    </script>
+    <div class="modal fade" id="sessionExpiredModal" tabindex="-1" aria-labelledby="sessionExpiredModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white"> 
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="sessionExpiredModalLabel">⏳ Sesión Expirada</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Tu sesión ha finalizado debido al tiempo de inactividad o expiración del token.</p>
+                    <p>Serás redirigido al inicio de sesión en unos segundos.</p>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-primary" id="redirectLoginBtn">🔒 Ir al Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
